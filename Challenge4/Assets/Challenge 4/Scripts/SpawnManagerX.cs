@@ -14,7 +14,14 @@ public class SpawnManagerX : MonoBehaviour
     public int enemyCount;
     public int waveCount = 1;
 
-    public GameObject player; 
+    public GameObject player;
+    private PlayerControllerX playerScript;
+
+    public int playerGoals;
+
+    private void Start() {
+        playerScript = player.GetComponent<PlayerControllerX>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -23,6 +30,12 @@ public class SpawnManagerX : MonoBehaviour
 
         if (enemyCount == 0)
         {
+            Debug.Log("PlayerGoals: " + playerGoals + " waveCount: " + (waveCount - 1));
+            if (playerGoals == (waveCount - 1) && !playerScript.gameOver && !playerScript.tutorial) {
+                playerScript.gameOver = true;
+                playerScript.gameOverText.SetActive(true);
+                Time.timeScale = 0f;
+            }
             SpawnEnemyWave(waveCount);
         }
 
