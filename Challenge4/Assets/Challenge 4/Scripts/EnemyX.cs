@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Zechariah Burrus
+ * Assignment 7
+ * Handles the enemy logic, forces them to path towards the player goal.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

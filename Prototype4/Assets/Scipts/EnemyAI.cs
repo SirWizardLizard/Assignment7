@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Zechariah Burrus
+ * Assignment 7
+ * Finds the player and paths the enemies to them for collision
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

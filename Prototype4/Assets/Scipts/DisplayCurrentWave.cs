@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Zechariah Burrus
+ * Assignment 7
+ * Updates text to display the current wave
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

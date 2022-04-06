@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Zechariah Burrus
+ * Assignment 7
+ * Handles the player, including win/loss conditions and tutorial text
+ * also powerups
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

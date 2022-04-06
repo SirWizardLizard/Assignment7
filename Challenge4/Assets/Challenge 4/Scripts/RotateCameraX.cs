@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Zechariah Burrus
+ * Assignment 7
+ * Rotates the camera around the focal point (inside the player)
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Zechariah Burrus
+ * Assignment 7
+ * Handles spawning the enemies in random positions with an increasing wave
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

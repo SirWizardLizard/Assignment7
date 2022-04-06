@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Zechariah Burrus
+ * Assignment 7
+ * Handles spawning the balls as well as tracks how many goals the enemies have gotten
+ * so the player can lose
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

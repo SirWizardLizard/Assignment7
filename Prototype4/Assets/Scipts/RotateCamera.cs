@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Zechariah Burrus
+ * Assignment 7
+ * Rotates the camera aroudn the focal point using horizontal input
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
