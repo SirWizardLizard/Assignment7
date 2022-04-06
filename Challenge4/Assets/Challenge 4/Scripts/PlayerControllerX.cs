@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerControllerX : MonoBehaviour
 {
     private Rigidbody playerRb;
@@ -18,16 +18,41 @@ public class PlayerControllerX : MonoBehaviour
     private float powerupStrength = 25; // how hard to hit enemy with powerup
 
     public GameObject speedBoost;
-    
+
+    public bool gameOver = false;
+    public bool tutorial = true;
+
+    public GameObject gameOverText;
+    public GameObject winText;
+    public GameObject tutorialText;
+
+    Scene currentScene;
+
+    SpawnManagerX spawnManager;
+
     void Start()
     {
         currentSpeed = baseSpeed;
         playerRb = GetComponent<Rigidbody>();
         focalPoint = GameObject.Find("Focal Point");
+
+        currentScene = SceneManager.GetActiveScene();
+        spawnManager = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnManagerX>();
     }
 
     void Update()
     {
+        //Forces the player to press space before playing
+        if (tutorial) {
+            Time.timeScale = 0f;
+            tutorialText.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                tutorial = false;
+                Time.timeScale = 1f;
+                tutorialText.SetActive(false);
+            }
+        }
+
         // Add force to player in direction of the focal point (and camera)
         float verticalInput = Input.GetAxis("Vertical");
         playerRb.AddForce(focalPoint.transform.forward * verticalInput * currentSpeed * Time.deltaTime); 
@@ -43,6 +68,20 @@ public class PlayerControllerX : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space)) {
             speedBoost.SetActive(false);
             currentSpeed = baseSpeed;
+        }
+
+        //Press R to restart the game
+        if (Input.GetKeyDown(KeyCode.R) && gameOver) {
+            gameOverText.SetActive(false);
+            SceneManager.LoadScene(currentScene.name);
+            Time.timeScale = 1f;
+        }
+
+        //If the player passes 10 waves they win and the game is over.
+        if (spawnManager.waveCount > 10) {
+            gameOver = true;
+            winText.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 
