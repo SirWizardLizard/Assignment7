@@ -499,6 +499,7 @@ MonoBehaviour:
   enemyCount: 0
   waveCount: 1
   player: {fileID: 583048338}
+  playerGoals: 0
 --- !u!1 &240266649
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,7 +752,7 @@ GameObject:
   - component: {fileID: 583048344}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -864,11 +865,9 @@ MonoBehaviour:
   speedBoost: {fileID: 898320294}
   gameOver: 0
   tutorial: 1
-  enemyFullGoal: 0
   gameOverText: {fileID: 1209346998}
   winText: {fileID: 240266649}
   tutorialText: {fileID: 523711865}
-  playerGoals: 0
 --- !u!1 &680832294
 GameObject:
   m_ObjectHideFlags: 0
